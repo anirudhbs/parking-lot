@@ -1,5 +1,6 @@
 const createParkingLot = require('./operations/createParkingLot')
 const park = require('./operations/park')
+const leave = require('./operations/leave')
 
 const lot = {}
 
@@ -12,6 +13,11 @@ function runCommand (params) {
     }
     case 'park': {
       const msg = park(lot, params[1], params[2])
+      process.stdout.write(`${msg}\n`)
+      break
+    }
+    case 'leave': {
+      const msg = leave(lot, params[1])
       process.stdout.write(`${msg}\n`)
       break
     }
