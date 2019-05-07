@@ -4,7 +4,7 @@ const leave = require('./operations/leave')
 
 const lot = {}
 
-function runCommand (params) {
+function runCommand (rl, params) {
   switch (params[0]) {
     case 'create_parking_lot': {
       const msg = createParkingLot(lot, params[1])
@@ -19,6 +19,10 @@ function runCommand (params) {
     case 'leave': {
       const msg = leave(lot, params[1])
       process.stdout.write(`${msg}\n`)
+      break
+    }
+    case 'exit': {
+      rl.close()
       break
     }
     default: {

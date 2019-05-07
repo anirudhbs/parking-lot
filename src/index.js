@@ -12,7 +12,7 @@ const rl = readline.createInterface({
 
 rl.on('line', command => {
   const params = getParams(command)
-  runCommand(params)
+  runCommand(rl, params)
 })
 
 rl.on('close', () => {
