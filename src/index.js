@@ -1,5 +1,6 @@
 const readline = require('readline')
-const { createParkingLot } = require('./methods')
+
+const { createParkingLot, park } = require('./methods')
 const { getParams } = require('./utils')
 
 const rl = readline.createInterface({
@@ -15,6 +16,10 @@ rl.on('line', command => {
   switch (params[0]) {
     case 'create_parking_lot': {
       createParkingLot(params[1])
+      break
+    }
+    case 'park': {
+      park(params[1], params[2])
       break
     }
     default: {
