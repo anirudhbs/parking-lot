@@ -6,30 +6,27 @@ const slotsForCarsWithColor = require('./operations/slotsForCarsWithColor')
 const lot = {}
 
 function runCommand (rl, params) {
+  let msg = ''
+
   switch (params[0]) {
     case 'create_parking_lot': {
-      const msg = createParkingLot(lot, params[1])
-      process.stdout.write(`${msg}\n`)
+      msg = createParkingLot(lot, params[1])
       break
     }
     case 'park': {
-      const msg = park(lot, params[1], params[2])
-      process.stdout.write(`${msg}\n`)
+      msg = park(lot, params[1], params[2])
       break
     }
     case 'leave': {
-      const msg = leave(lot, params[1])
-      process.stdout.write(`${msg}\n`)
+      msg = leave(lot, params[1])
       break
     }
     case 'registration_numbers_for_cars_with_colour': {
-      const msg = carsWithColor(lot, params[1])
-      process.stdout.write(`${msg}\n`)
+      msg = carsWithColor(lot, params[1])
       break
     }
     case 'slot_numbers_for_cars_with_colour': {
-      const msg = slotsForCarsWithColor(lot, params[1])
-      process.stdout.write(`${msg}\n`)
+      msg = slotsForCarsWithColor(lot, params[1])
       break
     }
     case 'exit': {
@@ -39,9 +36,10 @@ function runCommand (rl, params) {
       break
     }
     default: {
-      process.stdout.write('enter a valid command\n')
+      msg = 'enter a valid command'
     }
   }
+  process.stdout.write(`${msg}\n`)
 }
 
 module.exports = { runCommand }
