@@ -1,7 +1,7 @@
 const readline = require('readline')
 
-const { createParkingLot, park } = require('./methods')
 const { getParams } = require('./utils')
+const { runCommand } = require('./lot')
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -12,22 +12,7 @@ const rl = readline.createInterface({
 
 rl.on('line', command => {
   const params = getParams(command)
-
-  switch (params[0]) {
-    case 'create_parking_lot': {
-      const msg = createParkingLot(params[1])
-      process.stdout.write(`${msg}\n`)
-      break
-    }
-    case 'park': {
-      const msg = park(params[1], params[2])
-      process.stdout.write(`${msg}\n`)
-      break
-    }
-    default: {
-      process.stdout.write('enter a valid command\n')
-    }
-  }
+  runCommand(params)
 })
 
 rl.on('close', () => {
