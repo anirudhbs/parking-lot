@@ -17,6 +17,11 @@ function createParkingLot (n) {
   return message
 }
 
+function park () {
+  return 'Allocated slot number: 1'
+}
+
 module.exports = {
-  createParkingLot
+  createParkingLot,
+  park
 }
