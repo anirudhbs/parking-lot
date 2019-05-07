@@ -1,0 +1,23 @@
+{
+  "name": "parking-lot",
+  "version": "0.0.1",
+  "description": "A simple parking lot allocation tool",
+  "main": "src/index.js",
+  "author": "anirudhbs <anirudhbs96@gmail.com>",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anirudhbs/parking-lot.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-node": "^9.0.1",
+    "eslint-plugin-promise": "^4.1.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
