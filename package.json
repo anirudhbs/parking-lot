@@ -6,6 +6,7 @@
   "author": "anirudhbs <anirudhbs96@gmail.com>",
   "scripts": {
     "start": "node src/index.js",
+    "start:file": "node src/file.js",
     "test": "jest"
   },
   "repository": {

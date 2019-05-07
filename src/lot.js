@@ -28,7 +28,9 @@ function runCommand (rl, params) {
       break
     }
     case 'exit': {
-      rl.close()
+      if (rl !== null) {
+        rl.close()
+      }
       break
     }
     default: {
