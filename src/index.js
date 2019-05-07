@@ -15,11 +15,13 @@ rl.on('line', command => {
 
   switch (params[0]) {
     case 'create_parking_lot': {
-      createParkingLot(params[1])
+      const msg = createParkingLot(params[1])
+      process.stdout.write(`${msg}\n`)
       break
     }
     case 'park': {
-      park(params[1], params[2])
+      const msg = park(params[1], params[2])
+      process.stdout.write(`${msg}\n`)
       break
     }
     default: {

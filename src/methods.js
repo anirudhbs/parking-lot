@@ -4,23 +4,19 @@ function createParkingLot (n) {
   const num = parseInt(n)
 
   if (isNaN(num)) {
-    process.stdout.write('enter a valid number\n')
-    return false
+    return 'enter a valid number'
   }
 
   for (let i = 1; i <= num; i += 1) {
     lot[i] = null
   }
 
-  const message = `Created a parking lot with ${num} slots`
-  process.stdout.write(`${message}\n`)
-  return message
+  return `Created a parking lot with ${num} slots`
 }
 
 function park (plate, color) {
   if (typeof plate !== 'string' || typeof color !== 'string') {
-    process.stdout.write('Invalid input, make sure you enter both the plate, and the color\n')
-    return false
+    return 'Invalid input, make sure you enter both the plate, and the color'
   }
   let num = null
   const slots = Object.keys(lot)
@@ -33,16 +29,12 @@ function park (plate, color) {
     }
   }
   if (num === null) {
-    const message = 'All slots in the lot are occupied!'
-    process.stdout.write(`${message}\n`)
-    return message
+    return 'All slots in the lot are occupied!'
   }
 
   lot[num] = { plate, color }
 
-  const message = `Allocated slot number: ${num}`
-  process.stdout.write(`${message}\n`)
-  return message
+  return `Allocated slot number: ${num}`
 }
 
 module.exports = {

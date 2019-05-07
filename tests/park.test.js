@@ -9,15 +9,19 @@ describe('createParkingLot', () => {
   })
 
   it(`It should throw an error asking for a valid number`, () => {
-    expect(park('KA-01-HH-1234', 101)).toBe(false)
+    expect(park('KA-01-HH-1234', 101)).toBe(
+      'Invalid input, make sure you enter both the plate, and the color'
+    )
   })
 
   it(`It should throw an error asking for a valid number`, () => {
-    expect(park(undefined, 'White')).toBe(false)
+    expect(park(undefined, 'White')).toBe(
+      'Invalid input, make sure you enter both the plate, and the color'
+    )
   })
 
   it(`It should throw an error asking for a valid number`, () => {
-    expect(park()).toBe(false)
+    expect(park()).toBe('Invalid input, make sure you enter both the plate, and the color')
   })
 
   it('It should say return a message saying all slots in the lot are occupied', () => {
