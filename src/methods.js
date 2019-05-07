@@ -1,9 +1,5 @@
 const lot = {}
 
-function ping () {
-  return 'pong'
-}
-
 function createParkingLot (n) {
   const num = parseInt(n)
 
@@ -22,6 +18,5 @@ function createParkingLot (n) {
 }
 
 module.exports = {
-  ping,
   createParkingLot
 }
