@@ -6,9 +6,7 @@ function slotForRegistration (lot, plate) {
   }
 
   const matchesObject = getMatchingValues(lot, value => value.plate === plate)
-  const matchesArray = Object.keys(matchesObject)
-
-  return matchesArray.length > 0 ? matchesArray.join(', ') : 'Not found'
+  return matchesObject
 }
 
 module.exports = slotForRegistration

@@ -32,11 +32,13 @@ function runCommand (params) {
         break
       }
       case 'slot_numbers_for_cars_with_colour': {
-        msg = slotForCarsWithColor(lot, params[1])
+        const matches = slotForCarsWithColor(lot, params[1])
+        msg = getOutputString(getValuesFromObject(matches, 'slot'))
         break
       }
       case 'slot_number_for_registration_number': {
-        msg = slotForRegistration(lot, params[1])
+        const matches = slotForRegistration(lot, params[1])
+        msg = getOutputString(getValuesFromObject(matches, 'slot'))
         break
       }
       case 'status': {

@@ -6,9 +6,7 @@ function slotForCarsWithColor (lot, color) {
   }
 
   const matchesObject = getMatchingValues(lot, value => value.color === color)
-  const matchesArray = Object.keys(matchesObject)
-
-  return matchesArray.length > 0 ? matchesArray.join(', ') : 'Not found'
+  return matchesObject
 }
 
 module.exports = slotForCarsWithColor
