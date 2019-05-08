@@ -53,4 +53,8 @@ function runCommand (params) {
   }
 }
 
-module.exports = { runCommand }
+function getValuesFromObject (obj, key) {
+  return null
+}
+
+module.exports = { runCommand, getValuesFromObject }
