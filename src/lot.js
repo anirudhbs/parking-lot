@@ -53,8 +53,16 @@ function runCommand (params) {
   }
 }
 
-function getValuesFromObject (obj, key) {
-  return null
+function getValuesFromObject (obj, data) {
+  const arr = []
+  for (let key in obj) {
+    if (data === 'slot') {
+      arr.push(key)
+    } else {
+      obj[key][data] && arr.push(obj[key][data])
+    }
+  }
+  return arr
 }
 
 module.exports = { runCommand, getValuesFromObject }
