@@ -1,6 +1,6 @@
 const readline = require('readline')
 
-const { autoComplete, getParams } = require('./utils')
+const { autoComplete, getParams, writeToStdOutput } = require('./utils')
 const { runCommand } = require('./lot')
 
 const rl = readline.createInterface({
@@ -19,12 +19,12 @@ rl.on('line', line => {
 
   if (line.trim() !== '') {
     const params = getParams(line)
-    runCommand(rl, params)
+    runCommand(params)
   }
 })
 
 rl.on('close', () => {
-  process.stdout.write('goodbye!\n')
+  writeToStdOutput('goodbye!')
 })
 
 // handle exit here instead of in lot.js

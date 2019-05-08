@@ -6,11 +6,11 @@ const registrationForColor = require('./queries/registrationForColor')
 const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
 const slotForRegistration = require('./queries/slotForRegistration')
 
-const { getLotDetails } = require('./utils')
+const { getLotDetails, writeToStdOutput } = require('./utils')
 
 const lot = {}
 
-function runCommand (rl, params) {
+function runCommand (params) {
   let msg = ''
 
   switch (params[0]) {
@@ -47,7 +47,7 @@ function runCommand (rl, params) {
       msg = 'enter a valid command'
     }
   }
-  process.stdout.write(`${msg}\n`)
+  writeToStdOutput(msg)
 }
 
 module.exports = { runCommand }

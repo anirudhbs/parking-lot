@@ -32,4 +32,8 @@ function autoComplete (line) {
   return [hits, input]
 }
 
-module.exports = { autoComplete, getParams, getMatchingValues, getLotDetails }
+function writeToStdOutput (msg) {
+  process.stdout.write(`${msg}\n`)
+}
+
+module.exports = { autoComplete, getParams, getMatchingValues, getLotDetails, writeToStdOutput }
