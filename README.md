@@ -108,8 +108,8 @@ exit
 npm run test [...<filename>]
 
 # For example
-npm run test tests/park.test.js
-npm run test tests/park.test.js tests/slotForRegistration.test.js
+npm run test tests/operations/park.test.js
+npm run test tests/operations/park.test.js tests/queries/slotForRegistration.test.js
 
 # All the test files are present in the tests/ directory
 ```

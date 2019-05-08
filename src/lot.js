@@ -1,9 +1,9 @@
 const createParkingLot = require('./operations/createParkingLot')
 const park = require('./operations/park')
 const leave = require('./operations/leave')
-const registrationForColor = require('./operations/registrationForColor')
-const slotForCarsWithColor = require('./operations/slotForCarsWithColor')
-const slotForRegistration = require('./operations/slotForRegistration')
+const registrationForColor = require('./queries/registrationForColor')
+const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
+const slotForRegistration = require('./queries/slotForRegistration')
 
 const { printLotDetails } = require('./utils')
 

@@ -1,6 +1,6 @@
-const createParkingLot = require('../src/operations/createParkingLot')
-const park = require('../src/operations/park')
-const leave = require('../src/operations/leave')
+const createParkingLot = require('../../src/operations/createParkingLot')
+const park = require('../../src/operations/park')
+const leave = require('../../src/operations/leave')
 
 describe('createParkingLot', () => {
   const lot = {}
