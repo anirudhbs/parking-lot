@@ -5,6 +5,8 @@ const registrationForColor = require('./operations/registrationForColor')
 const slotForCarsWithColor = require('./operations/slotForCarsWithColor')
 const slotForRegistration = require('./operations/slotForRegistration')
 
+const { printLotDetails } = require('./utils')
+
 const lot = {}
 
 function runCommand (rl, params) {
@@ -33,6 +35,10 @@ function runCommand (rl, params) {
     }
     case 'slot_number_for_registration_number': {
       msg = slotForRegistration(lot, params[1])
+      break
+    }
+    case 'status': {
+      printLotDetails(lot)
       break
     }
     case 'exit': {

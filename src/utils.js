@@ -12,4 +12,9 @@ function getMatchingValues (obj, predicate) {
   return matches
 }
 
-module.exports = { getParams, getMatchingValues }
+function printLotDetails (lot) {
+  const obj = getMatchingValues(lot, value => value !== null)
+  console.table(obj)
+}
+
+module.exports = { getParams, getMatchingValues, printLotDetails }
