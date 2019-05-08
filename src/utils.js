@@ -14,9 +14,10 @@ function getMatchingValues (obj, predicate) {
   return matches
 }
 
-function printLotDetails (lot) {
+function getLotDetails (lot) {
+  // filter out empty slots
   const obj = getMatchingValues(lot, value => value !== null)
-  console.table(obj)
+  return obj
 }
 
 function autoComplete (line) {
@@ -31,4 +32,4 @@ function autoComplete (line) {
   return [hits, input]
 }
 
-module.exports = { autoComplete, getParams, getMatchingValues, printLotDetails }
+module.exports = { autoComplete, getParams, getMatchingValues, getLotDetails }
