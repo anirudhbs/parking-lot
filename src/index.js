@@ -1,13 +1,14 @@
 const readline = require('readline')
 
-const { getParams } = require('./utils')
+const { autoComplete, getParams } = require('./utils')
 const { runCommand } = require('./lot')
 
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
   terminal: true,
-  removeHistoryDuplicates: true
+  removeHistoryDuplicates: true,
+  completer: autoComplete
 })
 
 rl.on('line', command => {

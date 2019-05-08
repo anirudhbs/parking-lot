@@ -1,5 +1,5 @@
 function getParams (command) {
-  return command.trim().split(' ')
+  return command.trim().split(/\s+/)
 }
 
 function getMatchingValues (obj, predicate) {
@@ -17,8 +17,25 @@ function printLotDetails (lot) {
   console.table(obj)
 }
 
-function autoComplete () {
-  return null
+function autoComplete (line) {
+  // autocomplete method for commands for the CLI
+  const commands = [
+    'create_parking_lot',
+    'park',
+    'leave',
+    'registration_numbers_for_cars_with_colour',
+    'slot_numbers_for_cars_with_colour',
+    'slot_number_for_registration_number'
+  ]
+
+  const input = line.trim()
+
+  if (input.length === 0) {
+    return [commands, input]
+  }
+
+  const hits = commands.filter(command => command.startsWith(input))
+  return [hits, input]
 }
 
 module.exports = { autoComplete, getParams, getMatchingValues, printLotDetails }
