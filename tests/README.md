@@ -36,3 +36,11 @@ This is meant to test the logic written in the `autoComplete` method for CLI inp
 ## getParams
 
 This tests the `getParams` utility method used to get the parameters from each command that are separated by a space
+
+## getLotDetails
+
+This is for the `getLotDetails` method, which returns the details of all the non-empty slots in the parking lot
+
+## getMatchingValues
+
+This tests that the `getMatchingValues` method returns object containing only the values that pass the predicate
