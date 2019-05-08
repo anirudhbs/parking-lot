@@ -6,6 +6,7 @@ A parking lot allocation problem
 
 ## Steps to run the project
 
+- This project requires `node` to be installed on your machine, install it from [here](https://nodejs.org/en/)
 - Install the required node dependencies: `npm install`
 
 ### Option 1: Run the project on the CLI
