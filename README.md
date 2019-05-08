@@ -7,9 +7,96 @@ A parking lot allocation problem
 ## Steps to run the project
 
 - Install the required node dependencies: `npm install`
-- Run the CLI: `npm start`
-- For mock inputs, check `file_inputs.txt`
-- To exit the CLI, press `control + C`
+
+### Option 1: Run the project on the CLI
+
+- Run the command `npm start`
+- You can now enter commands to perform operations in the parking lot
+- The output of each command would be shown in the CLI
+- To exit the CLI, type `exit`, or press `control + C`
+
+### Option 2: Run the project using file input
+
+- Run the command `npm run start:file file_inputs.txt`
+- This method of running the application takes the input from the file `file_inputs.txt`
+- The assumption is that the file is present in the root directory of the project
+- All the commands inside of the file are run one by one
+- The output of all the commands are shown in the terminal
+
+## List of available commands
+
+- All the operation names use camel case convention
+- The operation name, and the paramters passed are space separated
+
+The following are the list of commands that the application can run
+
+### create_parking_lot
+
+This command takes in one argument, a number
+
+An empty parking lot of size of the input number is created
+
+```
+create_parking_lot 6
+# returns: Created a parking lot with 6 slots
+```
+
+### park
+
+This command takes 2 arguments, the registration number, and the color of the car
+
+A message is returned saying which slot the car is parked in
+
+```
+park KA-01-HH-1234 White
+# returns: Allocated slot number: 1
+```
+
+### leave
+
+This command takes a single argument, a slot number
+
+The car present at that slot number is then removed from there
+
+```
+leave 4
+# returns: Slot number 4 is free
+```
+
+### registration_numbers_for_cars_with_colour
+
+This command takes in a single argument, a color, and it returns the registration numbers of all the cars in the lot of the particular color
+
+```
+registration_numbers_for_cars_with_colour Red
+# returns: KA-02-HH-2345, KA-12-HH-6789
+```
+
+### slot_numbers_for_cars_with_colour
+
+This command takes a single argument, a color, and it returns the slot numbers of all the cars in the lot of that particular color
+
+```
+slot_numbers_for_cars_with_colour Red
+# returns: 2, 6
+```
+
+### slot_number_for_registration_number
+
+This command takes in a single argument, a registration number, and returns the slot number of the car of the given registration number
+
+```
+slot_number_for_registration_number KA-05-HH-4567
+# returns: 4
+```
+
+### exit
+
+This command exits the application
+
+```
+exit
+```
 
 ## Run the tests
 
@@ -18,6 +105,11 @@ A parking lot allocation problem
 - To run an individual test, run the following command
 
 ```
-npm run test <filename>
+npm run test [...<filename>]
+
+# For example
+npm run test tests/park.test.js
+npm run test tests/park.test.js tests/slotForRegistration.test.js
+
 # All the test files are present in the tests/ directory
 ```
