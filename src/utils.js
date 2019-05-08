@@ -1,3 +1,5 @@
+const commands = require('../src/COMMANDS')
+
 function getParams (command) {
   return command.trim().split(/\s+/)
 }
@@ -19,15 +21,6 @@ function printLotDetails (lot) {
 
 function autoComplete (line) {
   // autocomplete method for commands for the CLI
-  const commands = [
-    'create_parking_lot',
-    'park',
-    'leave',
-    'registration_numbers_for_cars_with_colour',
-    'slot_numbers_for_cars_with_colour',
-    'slot_number_for_registration_number'
-  ]
-
   const input = line.trim()
 
   if (input.length === 0) {

@@ -1,15 +1,7 @@
 const { autoComplete } = require('../src/utils')
+const commands = require('../src/COMMANDS')
 
 describe('autoComplete', () => {
-  const commands = [
-    'create_parking_lot',
-    'park',
-    'leave',
-    'registration_numbers_for_cars_with_colour',
-    'slot_numbers_for_cars_with_colour',
-    'slot_number_for_registration_number'
-  ]
-
   it('It should return an array of all the commands along with the input', () => {
     expect(autoComplete('')).toMatchObject([commands, ''])
   })
