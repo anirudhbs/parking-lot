@@ -93,14 +93,6 @@ slot_number_for_registration_number KA-05-HH-4567
 # returns: 4
 ```
 
-### exit
-
-This command exits the application
-
-```
-exit
-```
-
 ## Run the tests
 
 - `jest` is being used for tests in this project
