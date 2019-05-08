@@ -6,7 +6,7 @@ describe('createParkingLot', () => {
     expect(createParkingLot({}, n)).toBe(`Created a parking lot with ${n} slots`)
   })
 
-  it('It should send a message saying that a lot has already been created', () => {
+  it('It should throw an error saying that a lot has already been created', () => {
     const lot = {}
     createParkingLot(lot, n)
     expect(() => {
@@ -14,7 +14,7 @@ describe('createParkingLot', () => {
     }).toThrow(TypeError)
   })
 
-  it(`It should send a message asking for a valid number`, () => {
+  it(`It should throw an error asking for a valid number`, () => {
     expect(() => {
       createParkingLot({}, null)
     }).toThrow(TypeError)

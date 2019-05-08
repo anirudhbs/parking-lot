@@ -10,19 +10,19 @@ describe('createParkingLot', () => {
     expect(park(lot, 'KA-01-HH-1234', 'White')).toMatch(/Allocated slot number/)
   })
 
-  it(`It should send a message asking for a valid number`, () => {
+  it(`It should throw an error asking for a valid number`, () => {
     expect(() => {
       park(lot, 'KA-01-HH-1234', 101)
     }).toThrow(TypeError)
   })
 
-  it(`It should send a message asking for a valid number`, () => {
+  it(`It should throw an error asking for a valid number`, () => {
     expect(() => {
       park(lot, undefined, 'White')
     }).toThrow(TypeError)
   })
 
-  it(`It should send a message asking for a valid number`, () => {
+  it(`It should throw an error asking for a valid number`, () => {
     expect(() => {
       park(lot)
     }).toThrow(TypeError)

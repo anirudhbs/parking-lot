@@ -23,14 +23,14 @@ describe('createParkingLot', () => {
     expect(leave(lot, 1)).toBe('The slot is already empty')
   })
 
-  it("It should send a message saying this slot doesn't exist", () => {
+  it("It should throw an error saying this slot doesn't exist", () => {
     // for when there are less than mentioned slots in the lot
     expect(() => {
       leave(lot, 12)
     }).toThrow(TypeError)
   })
 
-  it('It should send a message asking for a valid slot number', () => {
+  it('It should throw an error asking for a valid slot number', () => {
     expect(() => {
       leave(lot, null)
     }).toThrow(TypeError)
