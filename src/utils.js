@@ -17,4 +17,8 @@ function printLotDetails (lot) {
   console.table(obj)
 }
 
-module.exports = { getParams, getMatchingValues, printLotDetails }
+function autoComplete () {
+  return null
+}
+
+module.exports = { autoComplete, getParams, getMatchingValues, printLotDetails }
