@@ -2,7 +2,7 @@ const { getMatchingValues } = require('../utils')
 
 function slotForCarsWithColor (lot, color) {
   if (color === undefined) {
-    return 'Please mention a color to look for'
+    throw new TypeError('Please mention a color to look for')
   }
 
   const matchesObject = getMatchingValues(lot, value => value.color === color)

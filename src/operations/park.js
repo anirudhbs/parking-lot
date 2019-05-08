@@ -1,6 +1,6 @@
 function park (lot, plate, color) {
   if (typeof plate !== 'string' || typeof color !== 'string') {
-    return 'Invalid input, make sure you enter both the plate, and the color'
+    throw new TypeError('Invalid input, make sure you enter both the plate, and the color')
   }
   let num = null
   const slots = Object.keys(lot)

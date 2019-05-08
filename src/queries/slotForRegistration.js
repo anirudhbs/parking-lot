@@ -2,7 +2,7 @@ const { getMatchingValues } = require('../utils')
 
 function slotForRegistration (lot, plate) {
   if (plate === undefined) {
-    return 'Please mention a registration number to look for'
+    throw new TypeError('Please mention a registration number to look for')
   }
 
   const matchesObject = getMatchingValues(lot, value => value.plate === plate)

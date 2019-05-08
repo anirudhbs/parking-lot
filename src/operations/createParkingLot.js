@@ -2,7 +2,7 @@ function createParkingLot (lot, n) {
   const num = parseInt(n)
 
   if (isNaN(num)) {
-    return 'enter a valid number'
+    throw new TypeError('enter a valid number')
   }
 
   if (Object.keys(lot).length > 0) {
