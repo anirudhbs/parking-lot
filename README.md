@@ -47,6 +47,8 @@ create_parking_lot 6
 
 This command takes 2 arguments, the registration number, and the color of the car
 
+When a car is parked, its registration number and the color of the car is stored
+
 A message is returned saying which slot the car is parked in
 
 ```
@@ -58,7 +60,7 @@ park KA-01-HH-1234 White
 
 This command takes a single argument, a slot number
 
-The car present at that slot number is then removed from there
+The car present at that slot number is then removed from the parking lot
 
 ```
 leave 4
@@ -92,6 +94,21 @@ The assumption here is that there is no restriction that registration numbers ne
 ```
 slot_number_for_registration_number KA-05-HH-4567
 # returns: 4
+```
+
+### status
+
+This command outputs a table of the details of the used slots in the parking lot
+
+```
+status
+# output
+┌─────────┬────────────┬─────────┐
+│ (index) │   plate    │  color  │
+├─────────┼────────────┼─────────┤
+│    1    │ 'KA01W123' │ 'White' │
+│    2    │ 'TN05E001' │ 'Black' │
+└─────────┴────────────┴─────────┘
 ```
 
 ## Run the tests

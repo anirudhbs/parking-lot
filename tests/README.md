@@ -44,3 +44,13 @@ This is for the `getLotDetails` method, which returns the details of all the non
 ## getMatchingValues
 
 This tests that the `getMatchingValues` method returns object containing only the values that pass the predicate
+
+## getOutputString
+
+This tests that the `getOutputString` method returns an appropriate message to display the user based on the array passed as a parameter to the method
+
+## getValuesFromObject
+
+This tests the `getValuesFromObject` method to return the required values in an array format
+
+The value can be slot number, registration number, or color
