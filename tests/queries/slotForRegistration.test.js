@@ -14,12 +14,19 @@ describe('createParkingLot', () => {
   park(lot, 'KA-03-HH-5678', 'White')
   park(lot, 'KA-12-HH-6789', 'Red')
 
-  it('It should say that nothing is found', () => {
-    expect(slotForRegistration(lot, 'KA-05-HH-0000')).toBe('Not found')
+  it('It should return emprty object', () => {
+    const expectedOutput = {}
+    expect(slotForRegistration(lot, 'KA-05-HH-0000')).toMatchObject(expectedOutput)
   })
 
-  it('It should return the slot for the entered registartion number', () => {
-    expect(slotForRegistration(lot, 'KA-05-HH-4567')).toBe('4')
+  it('It should return cars with entered registration number', () => {
+    const expectedOutput = {
+      4: {
+        plate: 'KA-05-HH-4567',
+        color: 'Blue'
+      }
+    }
+    expect(slotForRegistration(lot, 'KA-05-HH-4567')).toMatchObject(expectedOutput)
   })
 
   it('It should say that a registration number has to be passed as a parameter', () => {

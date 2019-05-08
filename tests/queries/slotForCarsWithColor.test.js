@@ -14,12 +14,23 @@ describe('createParkingLot', () => {
   park(lot, 'KA-03-HH-5678', 'White')
   park(lot, 'KA-12-HH-6789', 'Red')
 
-  it('It should say that nothing is found', () => {
-    expect(slotForCarsWithColor(lot, 'Pink')).toBe('Not found')
+  it('It should return empty object', () => {
+    const expectedOutput = {}
+    expect(slotForCarsWithColor(lot, 'Pink')).toMatchObject(expectedOutput)
   })
 
-  it('It should return list of plates of matching color', () => {
-    expect(slotForCarsWithColor(lot, 'Red')).toBe('2, 6')
+  it('It should cars of matching color', () => {
+    const expectedOutput = {
+      2: {
+        plate: 'KA-02-HH-2345',
+        color: 'Red'
+      },
+      6: {
+        plate: 'KA-12-HH-6789',
+        color: 'Red'
+      }
+    }
+    expect(slotForCarsWithColor(lot, 'Red')).toMatchObject(expectedOutput)
   })
 
   it('It should say that a color has to be passed as a parameter', () => {
