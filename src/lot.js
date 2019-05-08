@@ -43,16 +43,6 @@ function runCommand (rl, params) {
       console.table(obj)
       break
     }
-    case 'exit': {
-      if (rl !== null) {
-        rl.close()
-      }
-      break
-    }
-    case '': {
-      msg = ''
-      break
-    }
     default: {
       msg = 'enter a valid command'
     }

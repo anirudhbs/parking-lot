@@ -11,11 +11,20 @@ const rl = readline.createInterface({
   completer: autoComplete
 })
 
-rl.on('line', command => {
-  const params = getParams(command)
-  runCommand(rl, params)
+rl.on('line', line => {
+  if (line.trim() === 'exit') {
+    rl.close()
+    return
+  }
+
+  if (line.trim() !== '') {
+    const params = getParams(line)
+    runCommand(rl, params)
+  }
 })
 
 rl.on('close', () => {
   process.stdout.write('goodbye!\n')
 })
+
+// handle exit here instead of in lot.js
