@@ -47,12 +47,12 @@ function runCommand (params) {
         break
       }
       default: {
-        msg = 'enter a valid command'
+        throw new Error('Invalid command')
       }
     }
     writeToStdOutput(msg)
   } catch (err) {
-    writeToStdOutput(err)
+    writeToStdOutput(err.message)
   }
 }
 

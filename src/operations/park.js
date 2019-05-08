@@ -13,7 +13,7 @@ function park (lot, plate, color) {
     }
   }
   if (num === null) {
-    return 'Sorry, parking lot is full'
+    throw new Error('Sorry, parking lot is full')
   }
 
   lot[num] = { plate, color }

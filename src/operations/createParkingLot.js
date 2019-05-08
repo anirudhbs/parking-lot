@@ -6,7 +6,7 @@ function createParkingLot (lot, n) {
   }
 
   if (Object.keys(lot).length > 0) {
-    throw new TypeError('A lot was already created, cannot create another one')
+    throw new Error('A lot was already created, cannot create another one')
   }
 
   for (let i = 1; i <= num; i += 1) {

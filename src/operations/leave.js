@@ -6,7 +6,7 @@ function leave (lot, slot) {
   }
 
   if (lot[slot] === null) {
-    return 'The slot is already empty'
+    throw new Error('The slot is already empty')
   }
 
   lot[slotNumber] = null
