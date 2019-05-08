@@ -84,7 +84,9 @@ slot_numbers_for_cars_with_colour Red
 
 ### slot_number_for_registration_number
 
-This command takes in a single argument, a registration number, and returns the slot number of the car of the given registration number
+This command takes in a single argument, a registration number, and returns the slot number(s) of the car(s) of the given registration number
+
+The assumption here is that there is no restriction that registration numbers need not be unique
 
 ```
 slot_number_for_registration_number KA-05-HH-4567
