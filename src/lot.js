@@ -27,7 +27,8 @@ function runCommand (params) {
         break
       }
       case 'registration_numbers_for_cars_with_colour': {
-        msg = registrationForColor(lot, params[1])
+        const matches = registrationForColor(lot, params[1])
+        msg = getOutputString(getValuesFromObject(matches, 'plate'))
         break
       }
       case 'slot_numbers_for_cars_with_colour': {
