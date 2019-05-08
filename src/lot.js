@@ -65,4 +65,8 @@ function getValuesFromObject (obj, data) {
   return arr
 }
 
-module.exports = { runCommand, getValuesFromObject }
+function getOutputString (arr) {
+  return null
+}
+
+module.exports = { runCommand, getValuesFromObject, getOutputString }
