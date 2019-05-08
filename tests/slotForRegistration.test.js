@@ -18,11 +18,11 @@ describe('createParkingLot', () => {
     expect(slotForRegistration(lot, 'KA-05-HH-0000')).toBe('Not found')
   })
 
-  it('It should return the slot for the entered plate number', () => {
+  it('It should return the slot for the entered registartion number', () => {
     expect(slotForRegistration(lot, 'KA-05-HH-4567')).toBe('4')
   })
 
-  it('It should say that a plate number has to be passed as a parameter', () => {
-    expect(slotForRegistration(lot)).toBe('Please mention a plate to look for')
+  it('It should say that a registration number has to be passed as a parameter', () => {
+    expect(slotForRegistration(lot)).toBe('Please mention a registration number to look for')
   })
 })
