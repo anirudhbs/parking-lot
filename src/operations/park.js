@@ -13,7 +13,7 @@ function park (lot, plate, color) {
     }
   }
   if (num === null) {
-    return 'All slots in the lot are occupied!'
+    return 'Sorry, parking lot is full'
   }
 
   lot[num] = { plate, color }
