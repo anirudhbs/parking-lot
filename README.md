@@ -12,6 +12,7 @@ A parking lot allocation problem
 
 - Run the command `npm start`
 - You can now enter commands to perform operations in the parking lot
+- Autocomplete suggestions of the input can be seen by pressing the `TAB` button
 - The output of each command would be shown in the CLI
 - To exit the CLI, type `exit`, or press `control + C`
 

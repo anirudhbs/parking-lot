@@ -28,3 +28,11 @@ This tests the query functionality for getting the slot numbers of all the cars 
 ## slotForRegistration
 
 This tests the query functionality for getting the slot number of a car of the input registration number
+
+## autoComplete
+
+This is meant to test the logic written in the `autoComplete` method for CLI input
+
+## getParams
+
+This tests the `getParams` utility method used to get the parameters from each command that are separated by a space
