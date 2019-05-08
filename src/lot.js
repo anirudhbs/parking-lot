@@ -1,6 +1,7 @@
 const createParkingLot = require('./operations/createParkingLot')
 const park = require('./operations/park')
 const leave = require('./operations/leave')
+
 const registrationForColor = require('./queries/registrationForColor')
 const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
 const slotForRegistration = require('./queries/slotForRegistration')
@@ -45,6 +46,10 @@ function runCommand (rl, params) {
       if (rl !== null) {
         rl.close()
       }
+      break
+    }
+    case '': {
+      msg = ''
       break
     }
     default: {
