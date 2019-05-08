@@ -6,9 +6,10 @@ function registrationForColor (lot, color) {
   }
 
   const matchesObject = getMatchingValues(lot, value => value.color === color)
-  const matchesArray = Object.values(matchesObject).map(car => car.plate)
+  return matchesObject
+  // const matchesArray = Object.values(matchesObject).map(car => car.plate)
 
-  return matchesArray.length > 0 ? matchesArray.join(', ') : 'Not found'
+  // return matchesArray.length > 0 ? matchesArray.join(', ') : 'Not found'
 }
 
 module.exports = registrationForColor

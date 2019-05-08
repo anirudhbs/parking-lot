@@ -66,7 +66,10 @@ function getValuesFromObject (obj, data) {
 }
 
 function getOutputString (arr) {
-  return null
+  if (!Array.isArray(arr)) {
+    throw new TypeError('Input should be an array')
+  }
+  return arr.length > 0 ? arr.join(', ') : 'Not found'
 }
 
 module.exports = { runCommand, getValuesFromObject, getOutputString }
