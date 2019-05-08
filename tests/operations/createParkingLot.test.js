@@ -13,6 +13,8 @@ describe('createParkingLot', () => {
   })
 
   it(`It should send a message asking for a valid number`, () => {
-    expect(createParkingLot({}, null)).toBe('enter a valid number')
+    expect(() => {
+      createParkingLot({}, null)
+    }).toThrow(TypeError)
   })
 })

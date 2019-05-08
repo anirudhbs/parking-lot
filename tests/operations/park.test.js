@@ -11,19 +11,21 @@ describe('createParkingLot', () => {
   })
 
   it(`It should send a message asking for a valid number`, () => {
-    expect(park(lot, 'KA-01-HH-1234', 101)).toBe(
-      'Invalid input, make sure you enter both the plate, and the color'
-    )
+    expect(() => {
+      park(lot, 'KA-01-HH-1234', 101)
+    }).toThrow(TypeError)
   })
 
   it(`It should send a message asking for a valid number`, () => {
-    expect(park(lot, undefined, 'White')).toBe(
-      'Invalid input, make sure you enter both the plate, and the color'
-    )
+    expect(() => {
+      park(lot, undefined, 'White')
+    }).toThrow(TypeError)
   })
 
   it(`It should send a message asking for a valid number`, () => {
-    expect(park(lot)).toBe('Invalid input, make sure you enter both the plate, and the color')
+    expect(() => {
+      park(lot)
+    }).toThrow(TypeError)
   })
 
   it('It should say send a message saying all slots in the lot are occupied', () => {

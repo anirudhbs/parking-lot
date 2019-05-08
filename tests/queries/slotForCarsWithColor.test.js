@@ -23,6 +23,8 @@ describe('createParkingLot', () => {
   })
 
   it('It should say that a color has to be passed as a parameter', () => {
-    expect(slotForCarsWithColor(lot)).toBe('Please mention a color to look for')
+    expect(() => {
+      slotForCarsWithColor(lot)
+    }).toThrow(TypeError)
   })
 })

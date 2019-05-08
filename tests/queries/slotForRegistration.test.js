@@ -23,6 +23,8 @@ describe('createParkingLot', () => {
   })
 
   it('It should say that a registration number has to be passed as a parameter', () => {
-    expect(slotForRegistration(lot)).toBe('Please mention a registration number to look for')
+    expect(() => {
+      slotForRegistration(lot)
+    }).toThrow(TypeError)
   })
 })
