@@ -3,6 +3,8 @@ const park = require('./operations/park')
 const leave = require('./operations/leave')
 const carsWithColor = require('./operations/carsWithColor')
 const slotsForCarsWithColor = require('./operations/slotsForCarsWithColor')
+const slotForRegistration = require('./operations/slotForRegistration')
+
 const lot = {}
 
 function runCommand (rl, params) {
@@ -27,6 +29,10 @@ function runCommand (rl, params) {
     }
     case 'slot_numbers_for_cars_with_colour': {
       msg = slotsForCarsWithColor(lot, params[1])
+      break
+    }
+    case 'slot_number_for_registration_number': {
+      msg = slotForRegistration(lot, params[1])
       break
     }
     case 'exit': {
