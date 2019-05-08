@@ -1,4 +1,4 @@
-function carsWithColor (lot, color) {
+function registrationForColor (lot, color) {
   if (color === undefined) {
     return 'Please mention a color to look for'
   }
@@ -10,4 +10,4 @@ function carsWithColor (lot, color) {
   return matches.length > 0 ? matches.join(', ') : 'Not found'
 }
 
-module.exports = carsWithColor
+module.exports = registrationForColor

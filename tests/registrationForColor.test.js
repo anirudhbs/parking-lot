@@ -1,6 +1,6 @@
 const createParkingLot = require('../src/operations/createParkingLot')
 const park = require('../src/operations/park')
-const carsWithColor = require('../src/operations/carsWithColor')
+const registrationForColor = require('../src/operations/registrationForColor')
 
 describe('createParkingLot', () => {
   const lot = {}
@@ -15,14 +15,14 @@ describe('createParkingLot', () => {
   park(lot, 'KA-12-HH-6789', 'Red')
 
   it('It should say that nothing is found', () => {
-    expect(carsWithColor(lot, 'Pink')).toBe('Not found')
+    expect(registrationForColor(lot, 'Pink')).toBe('Not found')
   })
 
   it('It should return list of plates of matching color', () => {
-    expect(carsWithColor(lot, 'Red')).toBe('KA-02-HH-2345, KA-12-HH-6789')
+    expect(registrationForColor(lot, 'Red')).toBe('KA-02-HH-2345, KA-12-HH-6789')
   })
 
   it('It should say that a color has to be passed as a parameter', () => {
-    expect(carsWithColor(lot)).toBe('Please mention a color to look for')
+    expect(registrationForColor(lot)).toBe('Please mention a color to look for')
   })
 })
