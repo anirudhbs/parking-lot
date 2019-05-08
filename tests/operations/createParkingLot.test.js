@@ -11,7 +11,7 @@ describe('createParkingLot', () => {
     createParkingLot(lot, n)
     expect(() => {
       createParkingLot(lot, n)
-    }).toThrow(TypeError)
+    }).toThrow(Error)
   })
 
   it(`It should throw an error asking for a valid number`, () => {

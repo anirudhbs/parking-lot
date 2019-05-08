@@ -20,7 +20,10 @@ describe('createParkingLot', () => {
 
   it('It should send a message saying the slot is already empty', () => {
     leave(lot, 1)
-    expect(leave(lot, 1)).toBe('The slot is already empty')
+
+    expect(() => {
+      leave(lot, 1)
+    }).toThrow(Error)
   })
 
   it("It should throw an error saying this slot doesn't exist", () => {

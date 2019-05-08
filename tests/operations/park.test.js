@@ -35,6 +35,9 @@ describe('createParkingLot', () => {
     park(lot, 'KA-01-HH-4567', 'Blue')
     park(lot, 'KA-01-HH-5678', 'White')
     park(lot, 'KA-01-HH-6789', 'Black')
-    expect(park(lot, 'KA-05-JK-1921', 'Black')).toBe('Sorry, parking lot is full')
+
+    expect(() => {
+      park(lot, 'KA-05-JK-1921', 'Black')
+    }).toThrow(Error)
   })
 })
