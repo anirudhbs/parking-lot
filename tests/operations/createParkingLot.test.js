@@ -9,7 +9,9 @@ describe('createParkingLot', () => {
   it('It should send a message saying that a lot has already been created', () => {
     const lot = {}
     createParkingLot(lot, n)
-    expect(createParkingLot(lot, n)).toBe('A lot was already created, cannot create another one')
+    expect(() => {
+      createParkingLot(lot, n)
+    }).toThrow(TypeError)
   })
 
   it(`It should send a message asking for a valid number`, () => {
