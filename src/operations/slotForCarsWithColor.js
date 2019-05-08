@@ -1,6 +1,6 @@
 const { getMatchingValues } = require('../utils')
 
-function slotsForCarsWithColor (lot, color) {
+function slotForCarsWithColor (lot, color) {
   if (color === undefined) {
     return 'Please mention a color to look for'
   }
@@ -11,4 +11,4 @@ function slotsForCarsWithColor (lot, color) {
   return matchesArray.length > 0 ? matchesArray.join(', ') : 'Not found'
 }
 
-module.exports = slotsForCarsWithColor
+module.exports = slotForCarsWithColor
