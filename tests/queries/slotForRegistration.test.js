@@ -37,7 +37,7 @@ describe('Slot number(s) of cars of given registration number', () => {
     expect(slotForRegistration(lot, 'KA-05-HH-4567')).toMatchObject(expectedOutput)
   })
 
-  it('It should say that a registration number has to be passed as a parameter', () => {
+  it('It should throw an error saying that a registration number has to be passed as a parameter', () => {
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]

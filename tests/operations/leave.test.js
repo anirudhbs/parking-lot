@@ -3,8 +3,6 @@ const park = require('../../src/operations/park')
 const leave = require('../../src/operations/leave')
 
 describe('Leave operation', () => {
-  // create a parking lot with 6 slots
-
   it('It should remove the car from the allocated slot', () => {
     let lot = createParkingLot({}, 6)[0]
 
@@ -31,9 +29,10 @@ describe('Leave operation', () => {
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
     lot = park(lot, 'KA-01-HH-2345', 'Red')[0]
+    lot = leave(lot, 1)[0]
 
     expect(() => {
-      leave(leave(lot, 1)[0], 1)
+      leave(lot, 1)
     }).toThrow(Error)
   })
 
