@@ -33,7 +33,11 @@ function autoComplete (line) {
 }
 
 function writeToStdOutput (msg) {
-  process.stdout.write(`${msg}\n`)
+  if (typeof msg === 'string') {
+    process.stdout.write(`${msg}\n`)
+  } else {
+    printTable(msg)
+  }
 }
 
 function printTable (arr) {
