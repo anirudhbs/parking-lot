@@ -1,6 +1,6 @@
 const readline = require('readline')
 
-const { autoComplete, getParams, writeToStdOutput } = require('./utils')
+const { autoComplete, getParams, writeToStdOutput, printTable } = require('./utils')
 const { runCommand } = require('./lot')
 
 const rl = readline.createInterface({
@@ -20,7 +20,7 @@ rl.on('line', line => {
   if (line.trim() !== '') {
     const params = getParams(line)
     const output = runCommand(params)
-    writeToStdOutput(output)
+    typeof output === 'string' ? writeToStdOutput(output) : printTable(output)
   }
 })
 

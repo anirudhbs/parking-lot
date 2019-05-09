@@ -6,7 +6,7 @@ const registrationForColor = require('./queries/registrationForColor')
 const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
 const slotForRegistration = require('./queries/slotForRegistration')
 
-const { getLotDetails, printTable } = require('./utils')
+const { getLotDetails } = require('./utils')
 
 let lot = {}
 
@@ -45,9 +45,7 @@ function runCommand (params) {
         return getOutputString(getValuesFromObject(matches, 'slot'))
       }
       case 'status': {
-        const obj = getLotDetails(lot)
-        printTable(obj)
-        return ''
+        return getLotDetails(lot)
       }
       default: {
         throw new Error('Invalid command')
