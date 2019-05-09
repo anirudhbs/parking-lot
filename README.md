@@ -8,11 +8,13 @@ A parking lot allocation problem
 
 - This project requires `node` to be installed on your machine, install it from [here](https://nodejs.org/en/)
 - Install the required node dependencies: `npm install`
+- The above step is necessary only for development and testing purposes
 
 ### Option 1: Run the project on the CLI
 
 - Run the command `npm start`
 - You can now enter commands to perform operations in the parking lot
+- History of previously entered commands can be seen by pressing the `UP` and `DOWN` arrow buttons
 - Autocomplete suggestions of the input can be seen by pressing the `TAB` button
 - The output of each command would be shown in the CLI
 - To exit the CLI, type `exit`, or press `control + C`
