@@ -15,7 +15,7 @@ function getMatchingValues (obj, predicate) {
 }
 
 function getLotDetails (lot) {
-  // filter out empty slots
+  // returns object with details of all the occupied slots in the parking lot
   const obj = getMatchingValues(lot, value => value !== null)
   return obj
 }
