@@ -7,7 +7,7 @@ describe('autoComplete', () => {
   const n = 4
   createParkingLot(lot, n)
 
-  it('It should return an lot details with only used slots', () => {
+  it('It should return an empty lot', () => {
     const expectedObj = {}
     expect(getLotDetails(lot)).toMatchObject(expectedObj)
   })

@@ -14,12 +14,12 @@ describe('createParkingLot', () => {
   park(lot, 'KA-03-HH-5678', 'White')
   park(lot, 'KA-12-HH-6789', 'Red')
 
-  it('It should say that nothing is found', () => {
+  it('It should return an empty object', () => {
     const expectedOutput = {}
     expect(registrationForColor(lot, 'Pink')).toMatchObject(expectedOutput)
   })
 
-  it('It should return list of plates of matching color', () => {
+  it('It should return object that contains cars of matching color', () => {
     const expectedOutput = {
       2: {
         plate: 'KA-02-HH-2345',

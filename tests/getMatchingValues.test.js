@@ -15,7 +15,7 @@ describe('autoComplete', () => {
     expect(getMatchingValues(lot, value => value.color === 'Pink')).toMatchObject(expectedObj)
   })
 
-  it('It should return object with cars which pass the predicate test', () => {
+  it('It should return object with cars which pass the predicate', () => {
     const expectedObj = {
       1: {
         plate: 'KA-01-HH-3456',

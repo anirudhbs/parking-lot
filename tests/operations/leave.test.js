@@ -4,7 +4,7 @@ const leave = require('../../src/operations/leave')
 
 describe('createParkingLot', () => {
   const lot = {}
-  // create a parking lot with 7 slots
+  // create a parking lot with 6 slots
   createParkingLot(lot, 6)
 
   park(lot, 'KA-01-HH-1234', 'White')

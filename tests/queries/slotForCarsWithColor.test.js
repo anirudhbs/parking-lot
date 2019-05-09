@@ -19,7 +19,7 @@ describe('createParkingLot', () => {
     expect(slotForCarsWithColor(lot, 'Pink')).toMatchObject(expectedOutput)
   })
 
-  it('It should cars of matching color', () => {
+  it('It should return object with cars of matching color', () => {
     const expectedOutput = {
       2: {
         plate: 'KA-02-HH-2345',

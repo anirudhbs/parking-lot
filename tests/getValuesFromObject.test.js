@@ -1,7 +1,7 @@
 const { getValuesFromObject } = require('../src/lot')
 
 describe('getValuesFromObject', () => {
-  it('It should return an array of plate numbers', () => {
+  it('It should return an array of registration numbers', () => {
     const inputObj = {
       1: {
         plate: 'KA-01-HH-3456',

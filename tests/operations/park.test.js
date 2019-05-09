@@ -12,7 +12,7 @@ describe('createParkingLot', () => {
 
   it(`It should throw an error asking for a valid number`, () => {
     expect(() => {
-      park(lot, 'KA-01-HH-1234', 101)
+      park(lot, 'KA-01-HH-1234')
     }).toThrow(TypeError)
   })
 

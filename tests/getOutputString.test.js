@@ -18,7 +18,7 @@ describe('autoComplete', () => {
     expect(getOutputString(mockInput)).toBe('1, 2, 3')
   })
 
-  it('It should return slot numbers in a comma separated string', () => {
+  it('It should return registration numbers in a comma separated string', () => {
     const mockInput = ['KA-05-JK-1921', ' KA-05-JK-1922', ' KA-05-JK-1923']
     expect(getOutputString(mockInput)).toBe('KA-05-JK-1921,  KA-05-JK-1922,  KA-05-JK-1923')
   })
