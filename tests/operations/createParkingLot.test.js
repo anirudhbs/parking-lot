@@ -2,16 +2,16 @@ const createParkingLot = require('../../src/operations/createParkingLot')
 
 describe('createParkingLot', () => {
   const n = 6
-  const expectedObj = {
-    1: null,
-    2: null,
-    3: null,
-    4: null,
-    5: null,
-    6: null
-  }
 
   it(`It should create a parking lot with ${n} slots`, () => {
+    const expectedObj = {
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+      6: null
+    }
     expect(createParkingLot({}, n)).toMatchObject([expectedObj, n])
   })
 
