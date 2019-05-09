@@ -3,16 +3,16 @@ const park = require('../../src/operations/park')
 const slotForRegistration = require('../../src/queries/slotForRegistration')
 
 describe('createParkingLot', () => {
-  const lot = {}
+  let lot = {}
   // create a parking lot with 6 slots
   createParkingLot(lot, 6)
 
-  park(lot, 'KA-01-HH-1234', 'White')
-  park(lot, 'KA-02-HH-2345', 'Red')
-  park(lot, 'KA-05-HH-3456', 'White')
-  park(lot, 'KA-05-HH-4567', 'Blue')
-  park(lot, 'KA-03-HH-5678', 'White')
-  park(lot, 'KA-12-HH-6789', 'Red')
+  lot = park(lot, 'KA-01-HH-1234', 'White')[0]
+  lot = park(lot, 'KA-02-HH-2345', 'Red')[0]
+  lot = park(lot, 'KA-05-HH-3456', 'White')[0]
+  lot = park(lot, 'KA-05-HH-4567', 'Blue')[0]
+  lot = park(lot, 'KA-03-HH-5678', 'White')[0]
+  lot = park(lot, 'KA-12-HH-6789', 'Red')[0]
 
   it('It should return empty object', () => {
     const expectedOutput = {}

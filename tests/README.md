@@ -54,3 +54,9 @@ This tests that the `getOutputString` method returns an appropriate message to d
 This tests the `getValuesFromObject` method to return the required values in an array format
 
 The value can be slot number, registration number, or color
+
+## runCommand
+
+This tests the functionality of the `runCommand` method inside `lot.js` file
+
+It checks if the correct output for the entered command is being returned or not

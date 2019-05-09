@@ -3,12 +3,12 @@ const createParkingLot = require('../src/operations/createParkingLot')
 const park = require('../src/operations/park')
 
 describe('autoComplete', () => {
-  const lot = {}
+  let lot = {}
   const n = 4
   createParkingLot(lot, n)
-  park(lot, 'KA-01-HH-3456', 'White')
-  park(lot, 'KA-01-HH-4567', 'Blue')
-  park(lot, 'KA-01-HH-5678', 'White')
+  lot = park(lot, 'KA-01-HH-3456', 'White')[0]
+  lot = park(lot, 'KA-01-HH-4567', 'Blue')[0]
+  lot = park(lot, 'KA-01-HH-5678', 'White')[0]
 
   it('It should return an empty object', () => {
     const expectedObj = {}
