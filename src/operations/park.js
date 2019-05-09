@@ -16,9 +16,10 @@ function park (lot, plate, color) {
     throw new Error('Sorry, parking lot is full')
   }
 
-  lot[num] = { plate, color }
+  const newLot = Object.assign({}, lot)
+  newLot[num] = { plate, color }
 
-  return `Allocated slot number: ${num}`
+  return [newLot, num]
 }
 
 module.exports = park

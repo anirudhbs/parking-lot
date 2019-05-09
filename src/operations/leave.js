@@ -9,8 +9,10 @@ function leave (lot, slot) {
     throw new Error('The slot is already empty')
   }
 
-  lot[slotNumber] = null
-  return `Slot number ${slot} is free`
+  const newLot = Object.assign({}, lot)
+  newLot[slot] = null
+
+  return [newLot, slot]
 }
 
 module.exports = leave

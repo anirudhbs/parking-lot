@@ -8,7 +8,7 @@ const slotForRegistration = require('./queries/slotForRegistration')
 
 const { getLotDetails } = require('./utils')
 
-const lot = {}
+let lot = {}
 
 function runCommand (params) {
   try {
@@ -17,10 +17,14 @@ function runCommand (params) {
         return createParkingLot(lot, params[1])
       }
       case 'park': {
-        return park(lot, params[1], params[2])
+        const [newLot, slot] = park(lot, params[1], params[2])
+        lot = newLot
+        return `Allocated slot number: ${slot}`
       }
       case 'leave': {
-        return leave(lot, params[1])
+        const [newLot, slot] = leave(lot, params[1])
+        lot = newLot
+        return `Slot number ${slot} is free`
       }
       case 'registration_numbers_for_cars_with_colour': {
         const matches = registrationForColor(lot, params[1])
@@ -37,7 +41,7 @@ function runCommand (params) {
       case 'status': {
         const obj = getLotDetails(lot)
         console.table(obj)
-        break
+        return ''
       }
       default: {
         throw new Error('Invalid command')
