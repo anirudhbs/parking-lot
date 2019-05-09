@@ -36,4 +36,15 @@ function writeToStdOutput (msg) {
   process.stdout.write(`${msg}\n`)
 }
 
-module.exports = { autoComplete, getParams, getMatchingValues, getLotDetails, writeToStdOutput }
+function printTable (arr) {
+  console.table(arr)
+}
+
+module.exports = {
+  autoComplete,
+  getParams,
+  getMatchingValues,
+  getLotDetails,
+  writeToStdOutput,
+  printTable
+}

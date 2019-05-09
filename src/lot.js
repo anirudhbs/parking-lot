@@ -6,7 +6,7 @@ const registrationForColor = require('./queries/registrationForColor')
 const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
 const slotForRegistration = require('./queries/slotForRegistration')
 
-const { getLotDetails } = require('./utils')
+const { getLotDetails, printTable } = require('./utils')
 
 let lot = {}
 
@@ -46,7 +46,7 @@ function runCommand (params) {
       }
       case 'status': {
         const obj = getLotDetails(lot)
-        console.table(obj)
+        printTable(obj)
         return ''
       }
       default: {
