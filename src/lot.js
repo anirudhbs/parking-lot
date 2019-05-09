@@ -11,6 +11,10 @@ const { getLotDetails } = require('./utils')
 let lot = {}
 
 function runCommand (params) {
+  if (!Array.isArray(params)) {
+    throw new TypeError('Params is supposed to be an array')
+  }
+
   try {
     switch (params[0]) {
       case 'create_parking_lot': {
