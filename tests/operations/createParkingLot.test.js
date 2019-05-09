@@ -1,6 +1,6 @@
 const createParkingLot = require('../../src/operations/createParkingLot')
 
-describe('createParkingLot', () => {
+describe('createParkingLot operation', () => {
   const n = 6
 
   it(`It should create a parking lot with ${n} slots`, () => {

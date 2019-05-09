@@ -2,7 +2,7 @@ const createParkingLot = require('../../src/operations/createParkingLot')
 const park = require('../../src/operations/park')
 const leave = require('../../src/operations/leave')
 
-describe('createParkingLot', () => {
+describe('Leave operation', () => {
   // create a parking lot with 6 slots
 
   it('It should remove the car from the allocated slot', () => {
@@ -22,6 +22,7 @@ describe('createParkingLot', () => {
       5: { plate: 'KA-01-HH-5678', color: 'White' },
       6: { plate: 'KA-01-HH-6789', color: 'Black' }
     }
+
     expect(leave(lot, 4)).toMatchObject([expectedObj, 4])
   })
 
@@ -41,6 +42,7 @@ describe('createParkingLot', () => {
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
     lot = park(lot, 'KA-01-HH-2345', 'Red')[0]
+
     // for when there are less than mentioned slots in the lot
     expect(() => {
       leave(lot, 12)

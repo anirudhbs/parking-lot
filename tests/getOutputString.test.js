@@ -1,6 +1,6 @@
 const { getOutputString } = require('../src/lot')
 
-describe('autoComplete', () => {
+describe('getOutputString', () => {
   it('It should throw an error', () => {
     const mockInput = 'hello world'
     expect(() => {

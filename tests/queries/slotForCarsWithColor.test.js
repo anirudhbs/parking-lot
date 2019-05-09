@@ -2,9 +2,8 @@ const createParkingLot = require('../../src/operations/createParkingLot')
 const park = require('../../src/operations/park')
 const slotForCarsWithColor = require('../../src/queries/slotForCarsWithColor')
 
-describe('createParkingLot', () => {
+describe('Slot numbers of cars of given color', () => {
   it('It should return empty object', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
@@ -16,7 +15,6 @@ describe('createParkingLot', () => {
   })
 
   it('It should return object with cars of matching color', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
@@ -40,7 +38,6 @@ describe('createParkingLot', () => {
   })
 
   it('It should say that a color has to be passed as a parameter', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]

@@ -1,6 +1,6 @@
 const { getParams } = require('../src/utils')
 
-describe('autoComplete', () => {
+describe('Get parameters from given input line', () => {
   it('It should return an array with 1 empty string', () => {
     expect(getParams('')).toMatchObject([''])
   })

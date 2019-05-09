@@ -2,7 +2,7 @@ const { getLotDetails } = require('../src/utils')
 const createParkingLot = require('../src/operations/createParkingLot')
 const park = require('../src/operations/park')
 
-describe('autoComplete', () => {
+describe('getLotDetails', () => {
   const n = 4
 
   it('It should return an empty lot', () => {

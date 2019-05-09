@@ -2,9 +2,8 @@ const createParkingLot = require('../../src/operations/createParkingLot')
 const park = require('../../src/operations/park')
 const slotForRegistration = require('../../src/queries/slotForRegistration')
 
-describe('createParkingLot', () => {
+describe('Slot number(s) of cars of given registration number', () => {
   it('It should return empty object', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
@@ -20,7 +19,6 @@ describe('createParkingLot', () => {
   })
 
   it('It should return object with cars of entered registration number', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]
@@ -40,7 +38,6 @@ describe('createParkingLot', () => {
   })
 
   it('It should say that a registration number has to be passed as a parameter', () => {
-    // create a parking lot with 6 slots
     let lot = createParkingLot({}, 6)[0]
 
     lot = park(lot, 'KA-01-HH-1234', 'White')[0]

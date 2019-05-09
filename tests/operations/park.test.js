@@ -1,7 +1,7 @@
 const createParkingLot = require('../../src/operations/createParkingLot')
 const park = require('../../src/operations/park')
 
-describe('createParkingLot', () => {
+describe('Park operation', () => {
   it(`It should park the car in the nearest open slot`, () => {
     let lot = createParkingLot({}, 7)[0]
 
@@ -28,6 +28,7 @@ describe('createParkingLot', () => {
 
   it(`It should throw an error asking for a valid number`, () => {
     const lot = createParkingLot({}, 7)[0]
+
     expect(() => {
       park(lot, undefined, 'White')
     }).toThrow(TypeError)
@@ -35,6 +36,7 @@ describe('createParkingLot', () => {
 
   it(`It should throw an error asking for a valid number`, () => {
     const lot = createParkingLot({}, 7)[0]
+
     expect(() => {
       park(lot)
     }).toThrow(TypeError)
