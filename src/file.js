@@ -8,12 +8,14 @@ const filePath = path.join(__dirname, `../${process.argv[2]}`)
 
 fs.readFile(filePath, 'utf8', (err, data) => {
   if (err) {
-    writeToStdOutput(`error reading the file\n${err}`)
+    writeToStdOutput(err)
   } else {
     const commands = data.trim().split('\n')
+    const output = []
     for (let i = 0; i < commands.length; i += 1) {
       const params = getParams(commands[i])
-      runCommand(params)
+      output.push(runCommand(params))
     }
+    writeToStdOutput(output.join('\n'))
   }
 })

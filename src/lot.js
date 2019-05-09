@@ -6,40 +6,33 @@ const registrationForColor = require('./queries/registrationForColor')
 const slotForCarsWithColor = require('./queries/slotForCarsWithColor')
 const slotForRegistration = require('./queries/slotForRegistration')
 
-const { getLotDetails, writeToStdOutput } = require('./utils')
+const { getLotDetails } = require('./utils')
 
 const lot = {}
 
 function runCommand (params) {
-  let msg = ''
   try {
     switch (params[0]) {
       case 'create_parking_lot': {
-        msg = createParkingLot(lot, params[1])
-        break
+        return createParkingLot(lot, params[1])
       }
       case 'park': {
-        msg = park(lot, params[1], params[2])
-        break
+        return park(lot, params[1], params[2])
       }
       case 'leave': {
-        msg = leave(lot, params[1])
-        break
+        return leave(lot, params[1])
       }
       case 'registration_numbers_for_cars_with_colour': {
         const matches = registrationForColor(lot, params[1])
-        msg = getOutputString(getValuesFromObject(matches, 'plate'))
-        break
+        return getOutputString(getValuesFromObject(matches, 'plate'))
       }
       case 'slot_numbers_for_cars_with_colour': {
         const matches = slotForCarsWithColor(lot, params[1])
-        msg = getOutputString(getValuesFromObject(matches, 'slot'))
-        break
+        return getOutputString(getValuesFromObject(matches, 'slot'))
       }
       case 'slot_number_for_registration_number': {
         const matches = slotForRegistration(lot, params[1])
-        msg = getOutputString(getValuesFromObject(matches, 'slot'))
-        break
+        return getOutputString(getValuesFromObject(matches, 'slot'))
       }
       case 'status': {
         const obj = getLotDetails(lot)
@@ -50,9 +43,8 @@ function runCommand (params) {
         throw new Error('Invalid command')
       }
     }
-    writeToStdOutput(msg)
   } catch (err) {
-    writeToStdOutput(err.message)
+    return err.message
   }
 }
 

@@ -19,12 +19,11 @@ rl.on('line', line => {
 
   if (line.trim() !== '') {
     const params = getParams(line)
-    runCommand(params)
+    const output = runCommand(params)
+    writeToStdOutput(output)
   }
 })
 
 rl.on('close', () => {
   writeToStdOutput('goodbye!')
 })
-
-// handle exit here instead of in lot.js
