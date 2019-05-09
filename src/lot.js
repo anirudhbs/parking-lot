@@ -14,7 +14,9 @@ function runCommand (params) {
   try {
     switch (params[0]) {
       case 'create_parking_lot': {
-        return createParkingLot(lot, params[1])
+        const [newLot, num] = createParkingLot(lot, params[1])
+        lot = newLot
+        return `Created a parking lot with ${num} slots`
       }
       case 'park': {
         const [newLot, slot] = park(lot, params[1], params[2])

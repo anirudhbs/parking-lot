@@ -2,13 +2,21 @@ const createParkingLot = require('../../src/operations/createParkingLot')
 
 describe('createParkingLot', () => {
   const n = 6
+  const expectedObj = {
+    1: null,
+    2: null,
+    3: null,
+    4: null,
+    5: null,
+    6: null
+  }
+
   it(`It should create a parking lot with ${n} slots`, () => {
-    expect(createParkingLot({}, n)).toBe(`Created a parking lot with ${n} slots`)
+    expect(createParkingLot({}, n)).toMatchObject([expectedObj, n])
   })
 
   it('It should throw an error saying that a lot has already been created', () => {
-    const lot = {}
-    createParkingLot(lot, n)
+    const lot = createParkingLot({}, n)[0]
     expect(() => {
       createParkingLot(lot, n)
     }).toThrow(Error)

@@ -9,11 +9,13 @@ function createParkingLot (lot, n) {
     throw new Error('A lot was already created, cannot create another one')
   }
 
+  const newLot = {}
+
   for (let i = 1; i <= num; i += 1) {
-    lot[i] = null
+    newLot[i] = null
   }
 
-  return `Created a parking lot with ${num} slots`
+  return [newLot, n]
 }
 
 module.exports = createParkingLot
